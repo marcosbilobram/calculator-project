@@ -84,7 +84,7 @@ public class CalculatorViewController implements Initializable{
 	
 	@FXML
 	public void onButtonEqualAction() {
-		//Int result = currentOperation(N1, CurrentSignal, N2);
+		//Double result = currentOperation(N1, CurrentSignal, N2);
 		
 	}
 	
