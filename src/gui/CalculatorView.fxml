@@ -7,53 +7,53 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CalculatorViewController">
    <children>
-      <TextField fx:id="TextFieldPanel" layoutX="25.0" layoutY="15.0" prefHeight="72.0" prefWidth="320.0" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
-      <Button fx:id="buttonPercentage" layoutX="21.0" layoutY="119.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="75.0" text="\%" AnchorPane.bottomAnchor="390.0" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="120.0" />
-      <Button fx:id="buttonOneDividedfor" layoutX="15.0" layoutY="176.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="1/x" AnchorPane.leftAnchor="11.0" />
-      <Button fx:id="buttonSquareRoot" layoutX="189.0" layoutY="176.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="√" />
-      <Button fx:id="buttonSeven" layoutX="15.0" layoutY="248.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="7" AnchorPane.bottomAnchor="245.0" AnchorPane.leftAnchor="11.0">
+      <TextField fx:id="TextFieldPanel" layoutX="25.0" layoutY="15.0" onAction="#onTextFieldAction" prefHeight="72.0" prefWidth="320.0" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+      <Button fx:id="buttonPercentage" layoutX="21.0" layoutY="119.0" mnemonicParsing="false" onAction="#onButtonPercentageAction" prefHeight="40.0" prefWidth="75.0" text="\%" AnchorPane.bottomAnchor="390.0" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="120.0" />
+      <Button fx:id="buttonOneDividedfor" layoutX="15.0" layoutY="176.0" mnemonicParsing="false" onAction="#onButtonOneDivideForAction" prefHeight="55.0" prefWidth="55.0" text="1/x" AnchorPane.leftAnchor="11.0" />
+      <Button fx:id="buttonSquareRoot" layoutX="189.0" layoutY="176.0" mnemonicParsing="false" onAction="#onButtonSquaredRootAction" prefHeight="55.0" prefWidth="55.0" text="√" />
+      <Button fx:id="buttonSeven" layoutX="15.0" layoutY="248.0" mnemonicParsing="false" onAction="#onButtonSevenAction" prefHeight="55.0" prefWidth="55.0" text="7" AnchorPane.bottomAnchor="245.0" AnchorPane.leftAnchor="11.0">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="buttonFour" layoutX="15.0" layoutY="312.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="4" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="11.0" />
-      <Button fx:id="buttonOne" layoutX="15.0" layoutY="388.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="1" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="11.0" />
-      <Button fx:id="buttonChangeSignal" layoutX="21.0" layoutY="463.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="+/-" AnchorPane.leftAnchor="11.0" />
-      <Button fx:id="buttonClear" layoutX="138.0" layoutY="119.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="75.0" text="Clear" AnchorPane.bottomAnchor="390.0" AnchorPane.topAnchor="120.0" />
-      <Button fx:id="buttonSquared" layoutX="100.0" layoutY="176.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="x2" />
-      <Button fx:id="buttonFive" layoutX="105.0" layoutY="312.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="5" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="100.0" />
-      <Button fx:id="buttonEight" layoutX="105.0" layoutY="248.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="8" AnchorPane.bottomAnchor="245.0" AnchorPane.leftAnchor="100.0" />
-      <Button fx:id="buttonSix" layoutX="189.0" layoutY="312.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="6" AnchorPane.bottomAnchor="175.0" />
-      <Button fx:id="buttonThree" layoutX="189.0" layoutY="388.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="3" AnchorPane.bottomAnchor="105.0" />
-      <Button fx:id="buttonTwo" layoutX="105.0" layoutY="388.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="2" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="100.0" />
-      <Button fx:id="buttonDelete" layoutX="264.0" layoutY="119.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="75.0" text="Delete" AnchorPane.bottomAnchor="390.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="120.0" />
-      <Button fx:id="buttonDivision" layoutX="271.0" layoutY="179.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="65.0" text="÷" AnchorPane.rightAnchor="11.0">
+      <Button fx:id="buttonFour" layoutX="15.0" layoutY="312.0" mnemonicParsing="false" onAction="#onButtonFourAction" prefHeight="55.0" prefWidth="55.0" text="4" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="11.0" />
+      <Button fx:id="buttonOne" layoutX="15.0" layoutY="388.0" mnemonicParsing="false" onAction="#onButtonOneAction" prefHeight="55.0" prefWidth="55.0" text="1" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="11.0" />
+      <Button fx:id="buttonChangeSignal" layoutX="21.0" layoutY="463.0" mnemonicParsing="false" onAction="#onButtonChangeSignalAction" prefHeight="55.0" prefWidth="55.0" text="+/-" AnchorPane.leftAnchor="11.0" />
+      <Button fx:id="buttonClear" layoutX="138.0" layoutY="119.0" mnemonicParsing="false" onAction="#onButtonClearAction" prefHeight="40.0" prefWidth="75.0" text="Clear" AnchorPane.bottomAnchor="390.0" AnchorPane.topAnchor="120.0" />
+      <Button fx:id="buttonSquared" layoutX="100.0" layoutY="176.0" mnemonicParsing="false" onAction="#onButtonSquaredAction" prefHeight="55.0" prefWidth="55.0" text="x2" />
+      <Button fx:id="buttonFive" layoutX="105.0" layoutY="312.0" mnemonicParsing="false" onAction="#onButtonFiveAction" prefHeight="55.0" prefWidth="55.0" text="5" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="100.0" />
+      <Button fx:id="buttonEight" layoutX="105.0" layoutY="248.0" mnemonicParsing="false" onAction="#onButtonEightAction" prefHeight="55.0" prefWidth="55.0" text="8" AnchorPane.bottomAnchor="245.0" AnchorPane.leftAnchor="100.0" />
+      <Button fx:id="buttonSix" layoutX="189.0" layoutY="312.0" mnemonicParsing="false" onAction="#onButtonSixAction" prefHeight="55.0" prefWidth="55.0" text="6" AnchorPane.bottomAnchor="175.0" />
+      <Button fx:id="buttonThree" layoutX="189.0" layoutY="388.0" mnemonicParsing="false" onAction="#onButtonThreeAction" prefHeight="55.0" prefWidth="55.0" text="3" AnchorPane.bottomAnchor="105.0" />
+      <Button fx:id="buttonTwo" layoutX="105.0" layoutY="388.0" mnemonicParsing="false" onAction="#onButtonTwoAction" prefHeight="55.0" prefWidth="55.0" text="2" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="100.0" />
+      <Button fx:id="buttonDelete" layoutX="264.0" layoutY="119.0" mnemonicParsing="false" onAction="#onButtonDeleteAction" prefHeight="40.0" prefWidth="75.0" text="Delete" AnchorPane.bottomAnchor="390.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="120.0" />
+      <Button fx:id="buttonDivision" layoutX="271.0" layoutY="179.0" mnemonicParsing="false" onAction="#onButtonDivisionAction" prefHeight="50.0" prefWidth="65.0" text="÷" AnchorPane.rightAnchor="11.0">
          <font>
             <Font size="23.0" />
          </font>
       </Button>
-      <Button fx:id="buttonMultiplication" layoutX="271.0" layoutY="250.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="65.0" text="x" AnchorPane.rightAnchor="11.0">
+      <Button fx:id="buttonMultiplication" layoutX="271.0" layoutY="250.0" mnemonicParsing="false" onAction="#onButtonMultiplicationAction" prefHeight="50.0" prefWidth="65.0" text="x" AnchorPane.rightAnchor="11.0">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="buttonMinus" layoutX="271.0" layoutY="314.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="65.0" text="-" AnchorPane.rightAnchor="11.0">
+      <Button fx:id="buttonMinus" layoutX="271.0" layoutY="314.0" mnemonicParsing="false" onAction="#onButtonMinusAction" prefHeight="50.0" prefWidth="65.0" text="-" AnchorPane.rightAnchor="11.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="buttonNine" layoutX="189.0" layoutY="248.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="9" AnchorPane.bottomAnchor="245.0" />
-      <Button fx:id="buttonPlus" layoutX="271.0" layoutY="390.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="65.0" text="+" AnchorPane.bottomAnchor="109.0" AnchorPane.rightAnchor="11.0">
+      <Button fx:id="buttonNine" layoutX="189.0" layoutY="248.0" mnemonicParsing="false" onAction="#onButtonNineAction" prefHeight="55.0" prefWidth="55.0" text="9" AnchorPane.bottomAnchor="245.0" />
+      <Button fx:id="buttonPlus" layoutX="271.0" layoutY="390.0" mnemonicParsing="false" onAction="#onButtonPlusAction" prefHeight="50.0" prefWidth="65.0" text="+" AnchorPane.bottomAnchor="109.0" AnchorPane.rightAnchor="11.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="buttonEqual" layoutX="249.0" layoutY="463.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="83.0" text="=" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="11.0">
+      <Button fx:id="buttonEqual" layoutX="249.0" layoutY="463.0" mnemonicParsing="false" onAction="#onButtonEqualAction" prefHeight="58.0" prefWidth="83.0" text="=" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="11.0">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button fx:id="buttonZero" layoutX="105.0" layoutY="463.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="0" AnchorPane.leftAnchor="100.0" />
-      <Button fx:id="buttonComma" layoutX="189.0" layoutY="465.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" text="," AnchorPane.leftAnchor="189.0" />
+      <Button fx:id="buttonZero" layoutX="105.0" layoutY="463.0" mnemonicParsing="false" onAction="#onButtonZeroAction" prefHeight="55.0" prefWidth="55.0" text="0" AnchorPane.leftAnchor="100.0" />
+      <Button fx:id="buttonComma" layoutX="189.0" layoutY="465.0" mnemonicParsing="false" onAction="#onButtonCommaAction" prefHeight="55.0" prefWidth="55.0" text="," AnchorPane.leftAnchor="189.0" />
    </children>
 </AnchorPane>

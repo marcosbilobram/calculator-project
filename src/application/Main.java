@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.entities.Calculus;
 
 public class Main extends Application {
 	@Override
@@ -19,6 +20,7 @@ public class Main extends Application {
 			primaryStage.setScene(mainScene);
 			primaryStage.setTitle("Sample JavaFX application");
 			primaryStage.show();
+			Calculus calculus = new Calculus();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

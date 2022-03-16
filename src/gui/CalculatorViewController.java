@@ -7,8 +7,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import model.entities.Calculus;
+import model.entities.signals.Division;
 
 public class CalculatorViewController implements Initializable{
+	
+	Calculus calculus =  new Calculus();
 	
 	@FXML
 	private TextField TextFieldPanel; 
@@ -83,6 +87,11 @@ public class CalculatorViewController implements Initializable{
 	private Button buttonNine;
 	
 	@FXML
+	public void onTextFieldAction() {
+		
+	}
+	
+	@FXML
 	public void onButtonEqualAction() {
 		//Double result = currentOperation(N1, CurrentSignal, N2);
 		
@@ -120,27 +129,28 @@ public class CalculatorViewController implements Initializable{
 	
 	@FXML
 	public void onButtonDivisionAction() {
-		
+		calculus.setCurrentySignal("÷");
+		TextFieldPanel.setText("÷");
 	}
 	
 	@FXML
 	public void onButtonMultiplicationAction() {
-		
+		TextFieldPanel.setText("x");
 	}
 	
 	@FXML
 	public void onButtonMinusAction() {
-		
+		TextFieldPanel.setText("-");
 	}
 	
 	@FXML
 	public void onButtonPlusAction() {
-		
+		TextFieldPanel.setText("+");
 	}
 	
 	@FXML
 	public void onButtonCommaAction() {
-		
+		TextFieldPanel.setText(".");
 	}
 	
 	@FXML
@@ -150,52 +160,52 @@ public class CalculatorViewController implements Initializable{
 	
 	@FXML
 	public void onButtonOneAction() {
-		
+		TextFieldPanel.setText("1");
 	}
 	
 	@FXML
 	public void onButtonTwoAction() {
-		
+		TextFieldPanel.setText("2");
 	}
 	
 	@FXML
 	public void onButtonThreeAction() {
-		
+		TextFieldPanel.insertText(0, "3");
 	}
 	
 	@FXML
 	public void onButtonFourAction() {
-		
+		TextFieldPanel.setText("4");
 	}
 	
 	@FXML
 	public void onButtonFiveAction() {
-		
+		TextFieldPanel.setText("5");
 	}
 	
 	@FXML
 	public void onButtonSixAction() {
-		
+		TextFieldPanel.setText("6");
 	}
 	
 	@FXML
 	public void onButtonSevenAction() {
-		
+		TextFieldPanel.setText("7");
 	}
 	
 	@FXML
 	public void onButtonEightAction() {
-		
+		TextFieldPanel.setText("8");
 	}
 	
 	@FXML
 	public void onButtonNineAction() {
-		
+		TextFieldPanel.setText("9");
 	}
 	
 	@FXML
 	public void onButtonZeroAction() {
-		
+		TextFieldPanel.setText("0");
 	}
 	
 
