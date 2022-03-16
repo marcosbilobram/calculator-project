@@ -3,16 +3,17 @@ package model.entities.signals;
 import model.entities.Calculus;
 import model.entities.MatSignals;
 
-public class Plus implements MatSignals {
+public class Sum implements MatSignals {
 	
 	Calculus calculus;
 
 	@Override
-	public void operationAction() {
+	public double operationAction() {
 		Double firstNumber = calculus.getFirstNumber();
 		Double secondNumber = calculus.getSecondNumber();
 		Double result = firstNumber + secondNumber;
-		calculus.setFirstNumber(result);	
+		calculus.setFirstNumber(result);
+		return result;
 	}
 	
 	

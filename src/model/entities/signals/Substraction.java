@@ -3,16 +3,17 @@ package model.entities.signals;
 import model.entities.Calculus;
 import model.entities.MatSignals;
 
-public class Division implements MatSignals{
+public class Substraction implements MatSignals {
 	
-	private Calculus calculus;
+	Calculus calculus;
 
 	@Override
 	public double operationAction() {
 		Double firstNumber = calculus.getFirstNumber();
 		Double secondNumber = calculus.getSecondNumber();
-		Double result = firstNumber / secondNumber;
+		Double result = firstNumber - secondNumber;
 		calculus.setFirstNumber(result);
 		return result;
 	}
+
 }

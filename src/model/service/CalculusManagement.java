@@ -3,7 +3,9 @@ package model.service;
 import model.entities.Calculus;
 import model.entities.MatSignals;
 import model.entities.signals.Division;
-import model.entities.signals.Plus;
+import model.entities.signals.Multiplication;
+import model.entities.signals.Sum;
+import model.entities.signals.Substraction;
 
 public class CalculusManagement {
 	
@@ -14,10 +16,8 @@ public class CalculusManagement {
 		firstNumber = calculus.getFirstNumber();
 		currentSignal = signalConverter(calculus.getCurrentySignal());
 		secondNumber =  calculus.getSecondNumber();
-		matSignals.operationAction();
-		
-		
-		return null;
+		Double result = matSignals.operationAction();
+		return result;
 	}
 	
 	public MatSignals signalConverter(String currentSignal) {
@@ -26,7 +26,13 @@ public class CalculusManagement {
 			matSignal = new Division();
 		}
 		if(currentSignal == "+") {
-			matSignal = new Plus();
+			matSignal = new Sum();
+		}
+		if(currentSignal == "-") {
+			matSignal = new Substraction();
+		}
+		if(currentSignal == "x") {
+			matSignal = new Multiplication();
 		}
 		return matSignal;
 	}
