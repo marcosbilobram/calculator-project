@@ -5,7 +5,9 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.IndexRange;
 import javafx.scene.control.TextField;
 import model.entities.Calculus;
 
@@ -14,7 +16,7 @@ public class CalculatorViewController implements Initializable{
 	Calculus calculus =  new Calculus();
 	
 	@FXML
-	private TextField TextFieldPanel; 
+	private TextField TextFieldPanel;
 	
 	@FXML
 	private Button buttonEqual;
@@ -98,12 +100,12 @@ public class CalculatorViewController implements Initializable{
 	
 	@FXML
 	public void onButtonDeleteAction() {
-		
+		TextFieldPanel.deleteNextChar();
 	}
 	
 	@FXML
 	public void onButtonClearAction() {
-		
+		TextFieldPanel.deleteText(IndexRange.valueOf(TextFieldPanel.getText()));
 	}
 	
 	@FXML
@@ -129,27 +131,27 @@ public class CalculatorViewController implements Initializable{
 	@FXML
 	public void onButtonDivisionAction() {
 		calculus.setCurrentySignal("÷");
-		TextFieldPanel.setText("÷");
+		TextFieldPanel.appendText("÷");
 	}
 	
 	@FXML
 	public void onButtonMultiplicationAction() {
-		TextFieldPanel.setText("x");
+		TextFieldPanel.appendText("X");
 	}
 	
 	@FXML
 	public void onButtonMinusAction() {
-		TextFieldPanel.setText("-");
+		TextFieldPanel.appendText("-");
 	}
 	
 	@FXML
 	public void onButtonPlusAction() {
-		TextFieldPanel.setText("+");
+		TextFieldPanel.appendText("+");
 	}
 	
 	@FXML
 	public void onButtonCommaAction() {
-		TextFieldPanel.setText(".");
+		TextFieldPanel.appendText(".");
 	}
 	
 	@FXML
@@ -159,57 +161,58 @@ public class CalculatorViewController implements Initializable{
 	
 	@FXML
 	public void onButtonOneAction() {
-		TextFieldPanel.setText("1");
+		TextFieldPanel.appendText("1");
 	}
 	
 	@FXML
 	public void onButtonTwoAction() {
-		TextFieldPanel.setText("2");
+		TextFieldPanel.appendText("2");
 	}
 	
 	@FXML
 	public void onButtonThreeAction() {
-		TextFieldPanel.insertText(0, "3");
+		TextFieldPanel.appendText("3");
 	}
 	
 	@FXML
 	public void onButtonFourAction() {
-		TextFieldPanel.setText("4");
+		TextFieldPanel.appendText("4");
 	}
 	
 	@FXML
 	public void onButtonFiveAction() {
-		TextFieldPanel.setText("5");
+		TextFieldPanel.appendText("5");
 	}
 	
 	@FXML
 	public void onButtonSixAction() {
-		TextFieldPanel.setText("6");
+		TextFieldPanel.appendText("6");
 	}
 	
 	@FXML
 	public void onButtonSevenAction() {
-		TextFieldPanel.setText("7");
+		TextFieldPanel.appendText("7");
 	}
 	
 	@FXML
 	public void onButtonEightAction() {
-		TextFieldPanel.setText("8");
+		TextFieldPanel.appendText("8");
 	}
 	
 	@FXML
 	public void onButtonNineAction() {
-		TextFieldPanel.setText("9");
+		TextFieldPanel.appendText("9");
 	}
 	
 	@FXML
 	public void onButtonZeroAction() {
-		TextFieldPanel.setText("0");
+		TextFieldPanel.appendText("0");
 	}
 	
 
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
+		TextFieldPanel.setAlignment(Pos.BOTTOM_RIGHT);
 	}
 
 }
