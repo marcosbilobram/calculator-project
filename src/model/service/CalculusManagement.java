@@ -36,5 +36,14 @@ public class CalculusManagement {
 		}
 		return matSignal;
 	}
-		
+	
+	public void numberOrganizor(Double number) {
+		if (calculus.getFirstNumber() != null) {
+			calculus.setSecondNumber(number);
+		}
+		else {
+			calculus.setFirstNumber(number);
+		}
+	}
+	
 }

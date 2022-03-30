@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CalculatorViewController">
    <children>
-      <TextField fx:id="TextFieldPanel" layoutX="25.0" layoutY="15.0" onAction="#onTextFieldAction" prefHeight="72.0" prefWidth="320.0" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+      <TextField fx:id="textFieldPanel" layoutX="25.0" layoutY="15.0" onAction="#onTextFieldAction" prefHeight="72.0" prefWidth="320.0" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
       <Button fx:id="buttonPercentage" layoutX="21.0" layoutY="119.0" mnemonicParsing="false" onAction="#onButtonPercentageAction" prefHeight="40.0" prefWidth="75.0" text="\%" AnchorPane.bottomAnchor="390.0" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="120.0" />
       <Button fx:id="buttonOneDividedfor" layoutX="15.0" layoutY="176.0" mnemonicParsing="false" onAction="#onButtonOneDivideForAction" prefHeight="55.0" prefWidth="55.0" text="1/x" AnchorPane.leftAnchor="11.0" />
       <Button fx:id="buttonSquareRoot" layoutX="189.0" layoutY="176.0" mnemonicParsing="false" onAction="#onButtonSquaredRootAction" prefHeight="55.0" prefWidth="55.0" text="√" />

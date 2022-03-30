@@ -7,16 +7,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.IndexRange;
 import javafx.scene.control.TextField;
 import model.entities.Calculus;
+import model.service.CalculusManagement;
 
 public class CalculatorViewController implements Initializable{
 	
-	Calculus calculus =  new Calculus();
+	Calculus calculus = new Calculus();
+	CalculusManagement calculusMan = new CalculusManagement();
 	
 	@FXML
-	private TextField TextFieldPanel;
+	private TextField textFieldPanel;
 	
 	@FXML
 	private Button buttonEqual;
@@ -94,18 +95,29 @@ public class CalculatorViewController implements Initializable{
 	
 	@FXML
 	public void onButtonEqualAction() {
+		boolean éSim = textFieldPanel.getText().contains("+");
+		String digits = textFieldPanel.getText();
+		
+		
+		//calculusMan.numberOrganizor(digits);
 		//Double result = currentOperation(N1, CurrentSignal, N2);
 		
 	}
 	
+	//public String digitsSpliter(String digits) {
+	//	if (digits.contains("+") || digits.contains("-") || digits.contains("x") || digits.contains("÷")) {
+			
+	//	}
+//	}
+	
 	@FXML
 	public void onButtonDeleteAction() {
-		TextFieldPanel.deleteNextChar();
+		textFieldPanel.deleteNextChar();
 	}
 	
 	@FXML
 	public void onButtonClearAction() {
-		TextFieldPanel.deleteText(IndexRange.valueOf(TextFieldPanel.getText()));
+		textFieldPanel.clear();
 	}
 	
 	@FXML
@@ -131,27 +143,27 @@ public class CalculatorViewController implements Initializable{
 	@FXML
 	public void onButtonDivisionAction() {
 		calculus.setCurrentySignal("÷");
-		TextFieldPanel.appendText("÷");
+		textFieldPanel.appendText("÷");
 	}
 	
 	@FXML
 	public void onButtonMultiplicationAction() {
-		TextFieldPanel.appendText("X");
+		textFieldPanel.appendText("X");
 	}
 	
 	@FXML
 	public void onButtonMinusAction() {
-		TextFieldPanel.appendText("-");
+		textFieldPanel.appendText("-");
 	}
 	
 	@FXML
 	public void onButtonPlusAction() {
-		TextFieldPanel.appendText("+");
+		textFieldPanel.appendText("+");
 	}
 	
 	@FXML
 	public void onButtonCommaAction() {
-		TextFieldPanel.appendText(".");
+		textFieldPanel.appendText(".");
 	}
 	
 	@FXML
@@ -161,58 +173,58 @@ public class CalculatorViewController implements Initializable{
 	
 	@FXML
 	public void onButtonOneAction() {
-		TextFieldPanel.appendText("1");
+		textFieldPanel.appendText("1");
 	}
 	
 	@FXML
 	public void onButtonTwoAction() {
-		TextFieldPanel.appendText("2");
+		textFieldPanel.appendText("2");
 	}
 	
 	@FXML
 	public void onButtonThreeAction() {
-		TextFieldPanel.appendText("3");
+		textFieldPanel.appendText("3");
 	}
 	
 	@FXML
 	public void onButtonFourAction() {
-		TextFieldPanel.appendText("4");
+		textFieldPanel.appendText("4");
 	}
 	
 	@FXML
 	public void onButtonFiveAction() {
-		TextFieldPanel.appendText("5");
+		textFieldPanel.appendText("5");
 	}
 	
 	@FXML
 	public void onButtonSixAction() {
-		TextFieldPanel.appendText("6");
+		textFieldPanel.appendText("6");
 	}
 	
 	@FXML
 	public void onButtonSevenAction() {
-		TextFieldPanel.appendText("7");
+		textFieldPanel.appendText("7");
 	}
 	
 	@FXML
 	public void onButtonEightAction() {
-		TextFieldPanel.appendText("8");
+		textFieldPanel.appendText("8");
 	}
 	
 	@FXML
 	public void onButtonNineAction() {
-		TextFieldPanel.appendText("9");
+		textFieldPanel.appendText("9");
 	}
 	
 	@FXML
 	public void onButtonZeroAction() {
-		TextFieldPanel.appendText("0");
+		textFieldPanel.appendText("0");
 	}
 	
 
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		TextFieldPanel.setAlignment(Pos.BOTTOM_RIGHT);
+		textFieldPanel.setAlignment(Pos.BOTTOM_RIGHT);
 	}
 
 }
