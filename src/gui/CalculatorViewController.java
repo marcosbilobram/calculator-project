@@ -9,6 +9,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import model.entities.Calculus;
+import model.entities.MatSignals;
 import model.service.CalculusManagement;
 
 public class CalculatorViewController implements Initializable{
@@ -95,20 +96,18 @@ public class CalculatorViewController implements Initializable{
 	
 	@FXML
 	public void onButtonEqualAction() {
-		boolean éSim = textFieldPanel.getText().contains("+");
-		String digits = textFieldPanel.getText();
+		digitsSpliter(textFieldPanel.getText());
+		Double a = calculus.getFirstNumber();
+		Double b = calculus.getSecondNumber();
+		String c = calculus.getCurrentySignal();
+		MatSignals d = calculusMan.signalConverter(c);
+		Double e = calculusMan.currentOperation(a, d, b);
 		
-		
+		System.out.println(e);
 		//calculusMan.numberOrganizor(digits);
 		//Double result = currentOperation(N1, CurrentSignal, N2);
 		
 	}
-	
-	//public String digitsSpliter(String digits) {
-	//	if (digits.contains("+") || digits.contains("-") || digits.contains("x") || digits.contains("÷")) {
-			
-	//	}
-//	}
 	
 	@FXML
 	public void onButtonDeleteAction() {
@@ -221,6 +220,47 @@ public class CalculatorViewController implements Initializable{
 		textFieldPanel.appendText("0");
 	}
 	
+	public void digitsSpliter(String digits) {
+		String[] text;
+		Double firstPart;
+		Double secondPart;
+		
+		if (digits.contains("+")) {
+			text = textFieldPanel.getText().split("+"); 
+			firstPart = Double.parseDouble(text[0]);
+			calculus.setFirstNumber(firstPart);
+			secondPart = Double.parseDouble(text[1]);
+			calculus.setSecondNumber(secondPart);
+			calculus.setCurrentySignal("+");
+		}
+		
+		if (digits.contains("-")) {
+			text = textFieldPanel.getText().split("-"); 
+			firstPart = Double.parseDouble(text[0]);
+			calculus.setFirstNumber(firstPart);
+			secondPart = Double.parseDouble(text[1]);
+			calculus.setSecondNumber(secondPart);
+			calculus.setCurrentySignal("-");
+		}
+		
+		if (digits.contains("x")) {
+			text = textFieldPanel.getText().split("x"); 
+			firstPart = Double.parseDouble(text[0]);
+			calculus.setFirstNumber(firstPart);
+			secondPart = Double.parseDouble(text[1]);
+			calculus.setSecondNumber(secondPart);
+			calculus.setCurrentySignal("x");
+		}
+		
+		if (digits.contains("÷")) {
+			text = textFieldPanel.getText().split("÷"); 
+			firstPart = Double.parseDouble(text[0]);
+			calculus.setFirstNumber(firstPart);
+			secondPart = Double.parseDouble(text[1]);
+			calculus.setSecondNumber(secondPart);
+			calculus.setCurrentySignal("÷");
+		}
+	}
 
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
