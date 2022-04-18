@@ -9,8 +9,13 @@ import model.entities.signals.Substraction;
 
 public class CalculusManagement {
 	
-	private Calculus calculus;
 	private MatSignals matSignals;
+	private Calculus calculus;
+	
+	public CalculusManagement(MatSignals matSignals, Calculus calculus) {
+		this.matSignals = matSignals;
+		this.calculus = calculus;
+	}
 	
 	public Double currentOperation(Double firstNumber, MatSignals currentSignal , Double secondNumber) {
 		firstNumber = calculus.getFirstNumber();
@@ -36,14 +41,4 @@ public class CalculusManagement {
 		}
 		return matSignal;
 	}
-	
-	public void numberOrganizor(Double number) {
-		if (calculus.getFirstNumber() != null) {
-			calculus.setSecondNumber(number);
-		}
-		else {
-			calculus.setFirstNumber(number);
-		}
-	}
-	
 }

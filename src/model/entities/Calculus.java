@@ -8,7 +8,7 @@ public class Calculus {
 	
 	public Calculus() {
 	}
-
+	
 	public Calculus(Double firstNumber, Double secondNumber, String currentySignal) {
 		this.firstNumber = firstNumber;
 		this.secondNumber = secondNumber;

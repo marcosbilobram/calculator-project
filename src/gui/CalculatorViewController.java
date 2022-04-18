@@ -15,7 +15,8 @@ import model.service.CalculusManagement;
 public class CalculatorViewController implements Initializable{
 	
 	Calculus calculus = new Calculus();
-	CalculusManagement calculusMan = new CalculusManagement();
+	MatSignals matSignals;
+	CalculusManagement calculusMan = new CalculusManagement(matSignals, calculus);
 	
 	@FXML
 	private TextField textFieldPanel;
@@ -100,8 +101,8 @@ public class CalculatorViewController implements Initializable{
 		Double a = calculus.getFirstNumber();
 		Double b = calculus.getSecondNumber();
 		String c = calculus.getCurrentySignal();
-		MatSignals d = calculusMan.signalConverter(c);
-		Double e = calculusMan.currentOperation(a, d, b);
+		matSignals = calculusMan.signalConverter(c);
+		Double e = calculusMan.currentOperation(a, matSignals, b);
 		
 		System.out.println(e);
 		//calculusMan.numberOrganizor(digits);
@@ -141,7 +142,6 @@ public class CalculatorViewController implements Initializable{
 	
 	@FXML
 	public void onButtonDivisionAction() {
-		calculus.setCurrentySignal("÷");
 		textFieldPanel.appendText("÷");
 	}
 	
@@ -226,7 +226,7 @@ public class CalculatorViewController implements Initializable{
 		Double secondPart;
 		
 		if (digits.contains("+")) {
-			text = textFieldPanel.getText().split("+"); 
+			text = textFieldPanel.getText().split("\\+"); 
 			firstPart = Double.parseDouble(text[0]);
 			calculus.setFirstNumber(firstPart);
 			secondPart = Double.parseDouble(text[1]);
@@ -240,7 +240,7 @@ public class CalculatorViewController implements Initializable{
 			calculus.setFirstNumber(firstPart);
 			secondPart = Double.parseDouble(text[1]);
 			calculus.setSecondNumber(secondPart);
-			calculus.setCurrentySignal("-");
+			calculus.setCurrentySignal("\\-");
 		}
 		
 		if (digits.contains("x")) {
@@ -249,7 +249,7 @@ public class CalculatorViewController implements Initializable{
 			calculus.setFirstNumber(firstPart);
 			secondPart = Double.parseDouble(text[1]);
 			calculus.setSecondNumber(secondPart);
-			calculus.setCurrentySignal("x");
+			calculus.setCurrentySignal("\\x");
 		}
 		
 		if (digits.contains("÷")) {
@@ -258,7 +258,7 @@ public class CalculatorViewController implements Initializable{
 			calculus.setFirstNumber(firstPart);
 			secondPart = Double.parseDouble(text[1]);
 			calculus.setSecondNumber(secondPart);
-			calculus.setCurrentySignal("÷");
+			calculus.setCurrentySignal("\\÷");
 		}
 	}
 
